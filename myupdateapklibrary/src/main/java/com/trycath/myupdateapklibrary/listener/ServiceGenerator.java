@@ -22,7 +22,7 @@ public class ServiceGenerator {
     private static Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").serializeNulls().create();
     private static Retrofit.Builder builder = new Retrofit.Builder().baseUrl(HOST)
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create());
+            .addConverterFactory(GsonConverterFactory.create(new Gson());
 
     public static <T> T createService(Class<T> tClass){
         return builder
